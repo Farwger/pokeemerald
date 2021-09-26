@@ -75,6 +75,11 @@ script Construction_Crew2 {
     end
 }
 
+script Siren_Info {
+    msgbox(format("This siren will blare when the Gulpin attack."), MSGBOX_NPC)
+    end
+}
+
 script Guljira {
     if (var(VAR_BERSKET_STATE) < 2) { // before speaking to Jacuzzi
          msgbox("I'm hungry. Do you have any food?", MSGBOX_NPC)
@@ -131,6 +136,7 @@ script BersketCity_EventScript_See_Lips_Right { // After leaving lab with Cut, f
 
 script BersketCity_EventScript_See_Lips {
     addobject (2) // Lips has arrived!
+    applymovement(2, LipsApproaches) // Lips is movin'
     waitmovement (2)
     delay(30)
     msgbox("Gulpin: Hey, do you know where-")
@@ -221,6 +227,10 @@ script BersketCity_EventScript_Tasters_Depart {
 
 movement StepAwayFromConstructionSite {
     walk_down
+}
+
+movement LipsApproaches {
+    walk_right * 3
 }
 
 movement RunAwayFromLipsLeft {

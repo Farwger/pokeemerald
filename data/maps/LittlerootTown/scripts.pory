@@ -1096,7 +1096,7 @@ script LittlerootTown_EventScript_Meet_Syurp {
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
     waitmovement(OBJ_EVENT_ID_PLAYER)
     delay(30)
-    msgbox(format("You're confused? I'm a Swalot.\pWe protect this land from the Rot; that's why I'm visiting your Professor Birch.\pYou're still confused, but interested? Well, head by the Bersket City Lab, and I may have something for you to do. Until then,\pbe full with strength."))
+    msgbox(format("You're confused? I'm a Swalot.\pWe protect this land from the Rot, and to that end, I was visiting your Professor Birch.\pYou're still confused, but interested? Well, head by the Bersket City Lab, and I may have something for you to do. Until then,\pbe full with strength."))
     closemessage
     applymovement(9, SyrupLeavesLittleroot)
     waitmovement(9)

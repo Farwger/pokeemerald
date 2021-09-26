@@ -11,7 +11,6 @@ BersketCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	return
 
 BersketCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
-	addobject 2
 	setobjectxyperm 5, 24, 16
 	setobjectxyperm 4, 23, 17
 	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_UP
@@ -32,12 +31,6 @@ BersketCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 
 BerksetCity_Sign::
 	msgbox BerksetCity_Sign_Text_0, MSGBOX_SIGN
-	end
-
-
-Test::
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	setvar VAR_BERSKET_STATE, 1
 	end
 
 
@@ -95,6 +88,11 @@ Construction_Crew1::
 
 Construction_Crew2::
 	msgbox Construction_Crew2_Text_0, MSGBOX_NPC
+	end
+
+
+Siren_Info::
+	msgbox Siren_Info_Text_0, MSGBOX_NPC
 	end
 
 
@@ -168,6 +166,10 @@ BersketCity_EventScript_See_Lips_Right::
 
 
 BersketCity_EventScript_See_Lips::
+	addobject 2
+	applymovement 2, LipsApproaches
+	waitmovement 2
+	delay 30
 	msgbox BersketCity_EventScript_See_Lips_Text_0
 	applymovement 3, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 3
@@ -274,6 +276,12 @@ StepAwayFromConstructionSite:
 	walk_down
 	step_end
 
+LipsApproaches:
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
 RunAwayFromLipsLeft:
 	walk_fast_right
 	walk_fast_right
@@ -335,10 +343,15 @@ Fearful_Woman_Text_1:
 
 Construction_Crew1_Text_0:
 	.string "This building was destroyed by Guljira\n"
-	.string "in his attack. We're rebuilding it.$"
+	.string "during the latest Gulpin raid. We're\l"
+	.string "rebuilding it.$"
 
 Construction_Crew2_Text_0:
 	.string "We're on break.$"
+
+Siren_Info_Text_0:
+	.string "This siren will blare when the Gulpin\n"
+	.string "attack.$"
 
 Guljira_Text_0:
 	.string "I'm hungry. Do you have any food?$"
