@@ -1,0 +1,105 @@
+{
+  "id": "MAP_HONEYDEW_HAMLET",
+  "name": "HoneydewHamlet",
+  "layout": "LAYOUT_HONEYDEW_HAMLET",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "direction": "down",
+      "offset": 0,
+      "map": "MAP_ROUTE133"
+    },
+    {
+      "direction": "left",
+      "offset": 28,
+      "map": "MAP_ROUTE134"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GULPIN_DOLL",
+      "x": 19,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LATIOS",
+      "x": 25,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PROF_SYURP",
+      "x": 17,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 21,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_CITY",
+      "dest_warp_id": 8
+    },
+    {
+      "x": 38,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_HONEYDEW_HAMLET",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 0,
+      "y": 0,
+      "elevation": 3,
+      "item": "ITEM_USE_MAIL",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 19,
+      "y": 10,
+      "elevation": 3,
+      "item": "ITEM_SURF_ENGRAM",
+      "flag": "FLAG_TEMP_1"
+    }
+  ]
+}

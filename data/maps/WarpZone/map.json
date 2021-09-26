@@ -1,0 +1,41 @@
+{
+  "id": "MAP_WARP_ZONE",
+  "name": "WarpZone",
+  "layout": "LAYOUT_WARP_ZONE",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_CITY",
+      "dest_warp_id": 6
+    },
+    {
+      "x": 6,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_BERSKET_CITY",
+      "dest_warp_id": 18
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

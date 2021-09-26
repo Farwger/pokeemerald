@@ -17,6 +17,11 @@
       "direction": "up",
       "offset": 0,
       "map": "MAP_ROUTE101"
+    },
+    {
+      "direction": "down",
+      "offset": -22,
+      "map": "MAP_LITTLEROOT_BEACH"
     }
   ],
   "object_events": [
@@ -35,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 12,
+      "x": 15,
       "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -48,10 +53,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 14,
-      "y": 17,
+      "x": 12,
+      "y": 21,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 2,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -123,6 +128,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCH"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PROF_SYURP",
+      "x": 11,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_SYURP"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BIG_SNORLAX_DOLL",
+      "x": 11,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BIG_SNORLAX_DOLL",
+      "x": 0,
+      "y": 0,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -137,7 +181,7 @@
       "x": 5,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+      "dest_map": "MAP_PETALBURG_CITY",
       "dest_warp_id": 1
     },
     {
@@ -234,7 +278,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 15,
+      "x": 13,
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

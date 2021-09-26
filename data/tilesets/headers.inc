@@ -830,3 +830,25 @@ gTileset_UnionRoom::
 	.4byte gMetatiles_UnionRoom
 	.4byte gMetatileAttributes_UnionRoom
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_Woods::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Woods
+	.4byte gTilesetPalettes_Woods
+	.4byte gMetatiles_Woods
+	.4byte gMetatileAttributes_Woods
+	.4byte NULL
+
+	.align 2
+gTileset_SacredSwall::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_SacredSwall
+	.4byte gTilesetPalettes_SacredSwall
+	.4byte gMetatiles_SacredSwall
+	.4byte gMetatileAttributes_SacredSwall
+	.4byte NULL

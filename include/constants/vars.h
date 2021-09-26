@@ -94,20 +94,20 @@
 #define VAR_POKELOT_RND1                     0x404B
 #define VAR_POKELOT_RND2                     0x404C
 #define VAR_POKELOT_PRIZE_PLACE              0x404D
-#define VAR_UNUSED_0x404E                    0x404E // Unused Var
+#define VAR_LIPS_STATE                       0x404E //determines if Lips is in the party for special dialogue, determines if Lips will give shorter dialogue after introduction if not recruited immediately, what dialogue Lips gives at the Temple if not recuited at Bersket.
 #define VAR_LOTAD_SIZE_RECORD                0x404F
 #define VAR_LITTLEROOT_TOWN_STATE            0x4050
 #define VAR_OLDALE_TOWN_STATE                0x4051
-#define VAR_DEWFORD_TOWN_STATE               0x4052 // Unused Var
+#define VAR_BERSKET_STATE                    0x4052 // determines progress in the intro quest
 #define VAR_LAVARIDGE_TOWN_STATE             0x4053
 #define VAR_CURRENT_SECRET_BASE              0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
-#define VAR_VERDANTURF_TOWN_STATE            0x4055 // Unused Var
-#define VAR_PACIFIDLOG_TOWN_STATE            0x4056 // Unused Var
+#define VAR_HOENN_STATE                      0x4055 // determines regional level scaling
+#define VAR_MAGMA_RAYQUAZA_STATE             0x4056 // determines progress in the Team Magma questline, Taster questline, Raquaza questline
 #define VAR_PETALBURG_CITY_STATE             0x4057
 #define VAR_SLATEPORT_CITY_STATE             0x4058
-#define VAR_MAUVILLE_CITY_STATE              0x4059 // Unused Var
+#define VAR_AQUA_STATE                       0x4059 // determines progress in the Team Aqua questline
 #define VAR_RUSTBORO_CITY_STATE              0x405A
-#define VAR_FORTREE_CITY_STATE               0x405B // Unused Var
+#define VAR_DEVON_STATE                      0x405B // determines progress in the Devon questline
 #define VAR_LILYCOVE_CITY_STATE              0x405C // Unused Var
 #define VAR_MOSSDEEP_CITY_STATE              0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE            0x405E
@@ -149,7 +149,7 @@
 #define VAR_LITTLEROOT_HOUSES_STATE_MAY      0x4082
 #define VAR_UNUSED_0x4083                    0x4083 // Unused Var
 #define VAR_BIRCH_LAB_STATE                  0x4084
-#define VAR_PETALBURG_GYM_STATE              0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
+#define VAR_PETALBURG_GYM_STATE              0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman 
 #define VAR_CONTEST_HALL_STATE               0x4086
 #define VAR_CABLE_CLUB_STATE                 0x4087
 #define VAR_CONTEST_TYPE                     0x4088

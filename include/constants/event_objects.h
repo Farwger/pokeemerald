@@ -29,7 +29,7 @@
 #define OBJ_EVENT_GFX_POKEFAN_M                   25
 #define OBJ_EVENT_GFX_WOMAN_4                     26
 #define OBJ_EVENT_GFX_COOK                        27
-#define OBJ_EVENT_GFX_LINK_RECEPTIONIST           28
+#define OBJ_EVENT_GFX_PROF_SYURP                  28
 #define OBJ_EVENT_GFX_OLD_MAN                     29
 #define OBJ_EVENT_GFX_OLD_WOMAN                   30
 #define OBJ_EVENT_GFX_CAMPER                      31

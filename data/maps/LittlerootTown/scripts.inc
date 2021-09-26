@@ -121,6 +121,7 @@ LittlerootTown_OnFrame:
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 1, LittlerootTown_EventScript_StepOffTruckMale
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_StepOffTruckFemale
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_BeginDexUpgradeScene
+    map_script_2 VAR_LITTLEROOT_INTRO_STATE, 7, LittlerootTown_EventScript_Meet_Syurp
 	.2byte 0
 
 LittlerootTown_EventScript_StepOffTruckMale::
@@ -1070,3 +1071,79 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+LittlerootTown_EventScript_Meet_Syurp::
+	lockall
+	addobject 9
+	applymovement 9, SyurpWalkToPlayer
+	waitmovement 9
+	checkplayergender
+	compare VAR_RESULT, 0
+	goto_if_eq LittlerootTown_EventScript_Meet_Syurp_2
+	applymovement OBJ_EVENT_ID_PLAYER, FaceSyrupFemale
+LittlerootTown_EventScript_Meet_Syurp_1:
+	waitmovement OBJ_EVENT_ID_PLAYER
+	delay 10
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	delay 30
+	applymovement 9, Common_Movement_FacePlayer
+	msgbox LittlerootTown_EventScript_Meet_Syurp_Text_0
+	waitmessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	delay 30
+	msgbox LittlerootTown_EventScript_Meet_Syurp_Text_1
+	closemessage
+	applymovement 9, SyrupLeavesLittleroot
+	waitmovement 9
+	removeobject 9
+	setvar VAR_LITTLEROOT_INTRO_STATE, 8
+	releaseall
+	end
+
+LittlerootTown_EventScript_Meet_Syurp_2:
+	applymovement OBJ_EVENT_ID_PLAYER, FaceSyrupMale
+	goto LittlerootTown_EventScript_Meet_Syurp_1
+
+
+FaceSyrupMale:
+	face_right
+	step_end
+
+FaceSyrupFemale:
+	face_left
+	step_end
+
+SyurpWalkToPlayer:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
+SyrupLeavesLittleroot:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+LittlerootTown_EventScript_Meet_Syurp_Text_0:
+	.string "Hello, I'm Professor Syrup.$"
+
+LittlerootTown_EventScript_Meet_Syurp_Text_1:
+	.string "You're confused? I'm a Swalot.\p"
+	.string "We protect this land from the Rot;\n"
+	.string "that's why I'm visiting your Professor\l"
+	.string "Birch.\p"
+	.string "You're still confused, but interested?\n"
+	.string "Well, head by the Bersket City Lab, and\l"
+	.string "I may have something for you to do.\l"
+	.string "Until then,\p"
+	.string "be full with strength.$"

@@ -4,7 +4,7 @@
     {
       "id": "LAYOUT_PETALBURG_CITY",
       "name": "PetalburgCity_Layout",
-      "width": 30,
+      "width": 32,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -34,7 +34,7 @@
     {
       "id": "LAYOUT_RUSTBORO_CITY",
       "name": "RustboroCity_Layout",
-      "width": 40,
+      "width": 42,
       "height": 60,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
@@ -95,7 +95,7 @@
       "id": "LAYOUT_LITTLEROOT_TOWN",
       "name": "LittlerootTown_Layout",
       "width": 20,
-      "height": 20,
+      "height": 25,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/LittlerootTown/border.bin",
@@ -105,7 +105,7 @@
       "id": "LAYOUT_OLDALE_TOWN",
       "name": "OldaleTown_Layout",
       "width": 20,
-      "height": 20,
+      "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/OldaleTown/border.bin",
@@ -187,7 +187,7 @@
       "width": 80,
       "height": 22,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route103/border.bin",
       "blockdata_filepath": "data/layouts/Route103/map.bin"
     },
@@ -195,7 +195,7 @@
       "id": "LAYOUT_ROUTE104",
       "name": "Route104_Layout",
       "width": 40,
-      "height": 80,
+      "height": 72,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route104/border.bin",
@@ -234,7 +234,7 @@
     {
       "id": "LAYOUT_ROUTE108",
       "name": "Route108_Layout",
-      "width": 60,
+      "width": 70,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
@@ -245,7 +245,7 @@
       "id": "LAYOUT_ROUTE109",
       "name": "Route109_Layout",
       "width": 40,
-      "height": 63,
+      "height": 67,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route109/border.bin",
@@ -1344,10 +1344,10 @@
     {
       "id": "LAYOUT_PETALBURG_WOODS",
       "name": "PetalburgWoods_Layout",
-      "width": 48,
-      "height": 44,
+      "width": 90,
+      "height": 70,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_Woods",
       "border_filepath": "data/layouts/PetalburgWoods/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgWoods/map.bin"
     },
@@ -1855,7 +1855,7 @@
       "id": "LAYOUT_ABANDONED_SHIP_DECK",
       "name": "AbandonedShip_Deck_Layout",
       "width": 23,
-      "height": 21,
+      "height": 18,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/AbandonedShip_Deck/border.bin",
@@ -4410,6 +4410,116 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_BEACH",
+      "name": "LittlerootBeach_Layout",
+      "width": 60,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/LittlerootBeach/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootBeach/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE136",
+      "name": "Route136_Layout",
+      "width": 32,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Woods",
+      "border_filepath": "data/layouts/Route136/border.bin",
+      "blockdata_filepath": "data/layouts/Route136/map.bin"
+    },
+    {
+      "id": "LAYOUT_BERSKET_CITY",
+      "name": "BersketCity_Layout",
+      "width": 48,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SacredSwall",
+      "border_filepath": "data/layouts/BersketCity/border.bin",
+      "blockdata_filepath": "data/layouts/BersketCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE135",
+      "name": "Route135_Layout",
+      "width": 72,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route135/border.bin",
+      "blockdata_filepath": "data/layouts/Route135/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTYPETAL_HARBOR",
+      "name": "RustypetalHarbor_Layout",
+      "width": 50,
+      "height": 55,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/RustypetalHarbor/border.bin",
+      "blockdata_filepath": "data/layouts/RustypetalHarbor/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE137",
+      "name": "Route137_Layout",
+      "width": 50,
+      "height": 72,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route137/border.bin",
+      "blockdata_filepath": "data/layouts/Route137/map.bin"
+    },
+    {
+      "id": "LAYOUT_GROVEOF_PLENTY",
+      "name": "GroveofPlenty_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Woods",
+      "border_filepath": "data/layouts/GroveofPlenty/border.bin",
+      "blockdata_filepath": "data/layouts/GroveofPlenty/map.bin"
+    },
+    {
+      "id": "LAYOUT_HONEYDEW_HAMLET",
+      "name": "HoneydewHamlet_Layout",
+      "width": 44,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SacredSwall",
+      "border_filepath": "data/layouts/HoneydewHamlet/border.bin",
+      "blockdata_filepath": "data/layouts/HoneydewHamlet/map.bin"
+    },
+    {
+      "id": "LAYOUT_ABANDONED_SHIP_UNCHARTED_ISLAND",
+      "name": "AbandonedShip_UnchartedIsland_Layout",
+      "width": 37,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/AbandonedShip_UnchartedIsland/border.bin",
+      "blockdata_filepath": "data/layouts/AbandonedShip_UnchartedIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOENN_DESERT",
+      "name": "HoennDesert_Layout",
+      "width": 80,
+      "height": 66,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/HoennDesert/border.bin",
+      "blockdata_filepath": "data/layouts/HoennDesert/map.bin"
+    },
+    {
+      "id": "LAYOUT_WARP_ZONE",
+      "name": "WarpZone_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/WarpZone/border.bin",
+      "blockdata_filepath": "data/layouts/WarpZone/map.bin"
     }
   ]
 }

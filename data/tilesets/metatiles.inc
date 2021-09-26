@@ -557,3 +557,18 @@ gMetatiles_UnionRoom::
 	.align 1
 gMetatileAttributes_UnionRoom::
 	.incbin "data/tilesets/secondary/union_room/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_Woods::
+	.incbin "data/tilesets/secondary/woods/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Woods::
+	.incbin "data/tilesets/secondary/woods/metatile_attributes.bin"
+	.align 1
+gMetatiles_SacredSwall::
+	.incbin "data/tilesets/secondary/sacredswall/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_SacredSwall::
+	.incbin "data/tilesets/secondary/sacredswall/metatile_attributes.bin"

@@ -1729,3 +1729,43 @@ gTilesetPalettes_UnionRoom::
 	.align 2
 gTilesetTiles_UnionRoom::
 	.incbin "data/tilesets/secondary/union_room/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Woods::
+	.incbin "data/tilesets/secondary/woods/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/woods/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Woods::
+	.incbin "data/tilesets/secondary/woods/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_SacredSwall::
+	.incbin "data/tilesets/secondary/sacredswall/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/sacredswall/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_SacredSwall::
+	.incbin "data/tilesets/secondary/sacredswall/tiles.4bpp.lz"

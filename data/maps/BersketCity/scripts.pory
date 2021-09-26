@@ -1,0 +1,240 @@
+mapscripts BersketCity_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_BERSKET_STATE) == 2) { // When leaving the lab with Cut
+            addobject (2) // Lips has arrived!
+            setobjectxyperm (5, 24, 16)
+            setobjectxyperm (4, 23, 17) // two construction crew npcs move to block the west street from lab
+            setobjectmovementtype (5, MOVEMENT_TYPE_FACE_UP)
+            setobjectmovementtype (4, MOVEMENT_TYPE_FACE_UP)
+            setobjectmovementtype (3, MOVEMENT_TYPE_FACE_RIGHT) // woman is looking away from Lips when he talks to her
+            setobjectxyperm (10, 39, 17) // Guljira moves to block the south route from the lab. Adjust coordinates when Guljira receives his actual sprite
+            setobjectmovementtype (10, MOVEMENT_TYPE_FACE_UP)
+
+            //Add code to move construction crew and Guljira into place for funnel. Stop them moving until after the See Lips event, then move them back and return their normal movement
+        }
+        if (var(VAR_BERSKET_STATE) >= 3 && !flag(FLAG_HIDE_BERSKET_CITY_LIPS)) {
+            setobjectxyperm (3, 30, 18) // If the woman has ran away and Lips is still there, she stays away
+        }
+    }
+}
+
+// Signs
+script BerksetCity_Sign {
+    msgbox("Bersket City\nHome of the best food in Hoenn.", MSGBOX_SIGN)
+    end
+}
+
+script Test {
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    setvar(VAR_BERSKET_STATE, 1)
+    end
+}
+
+script Construction_Sign {
+    msgbox("CONSTRUCTION IN PROGRESS", MSGBOX_SIGN)
+    end
+}
+
+script Lab_Sign {
+    msgbox("Bersket Lab\nProf. Jacuzzi", MSGBOX_SIGN)
+    end
+}
+
+script Tunnel_Sign {
+    msgbox("Rusturket Tunnel\nLinking the three cities\pThe tunnel project has been\ncanceled.", MSGBOX_SIGN)
+    end
+}
+
+script Bakery_Sign {
+    msgbox("Bersket Bakery", MSGBOX_SIGN)
+    end
+}
+
+script Cafe_Sign {
+    msgbox("Bersket Café", MSGBOX_SIGN)
+    end
+}
+
+script Storage_Sign {
+    msgbox("Bersket Food Storage\nAUTHORIZED PERSONNEL ONLY", MSGBOX_SIGN)
+    end
+}
+
+// Citizens
+script Fearful_Woman {
+    if (var(VAR_BERSKET_STATE) == 3 && var(VAR_LIPS_STATE) == 0) { // If Lips has been seen but not talken to, and if Grata is not yet defeated
+        msgbox("RUN!\pThe Gulpin are back!\nHide your food!", MSGBOX_NPC)
+        end
+    }
+    else {
+        msgbox("Hello.\pI hope the Gulpin don't come back.", MSGBOX_NPC)
+        end
+    }
+}
+
+script Construction_Crew1 {
+    msgbox(format("This building was destroyed by Guljira in his attack. We're rebuilding it."), MSGBOX_NPC)
+    end
+}
+
+script Construction_Crew2 {
+    msgbox("We're on break.", MSGBOX_NPC)
+    end
+}
+
+script Guljira {
+    if (var(VAR_BERSKET_STATE) < 2) { // before speaking to Jacuzzi
+         msgbox("I'm hungry. Do you have any food?", MSGBOX_NPC)
+    }
+    elif (var(VAR_BERSKET_STATE) >= 2 && var(VAR_BERSKET_STATE) < 4) { // after speaking to Jacuzzi, before defeating Grata
+        msgbox("I'm really hungry.\nGet some food for me ... please.", MSGBOX_NPC)
+    }
+    elif (var(VAR_BERSKET_STATE) >= 4) { // after defeating Grata, food has arrived
+        msgbox(format("You helped get my food?\nWow, thanks!\pNow that I'm not hungry, I can think clearly...\pIt was wrong to attack the city, even though I was hungry. I should be helping people, not stealing their food. I'm a Gulpin! I'm Guljira, the Guliath, chosen of Swall!"), MSGBOX_NPC)
+    }
+}
+
+// Events
+script BersketCity_EventScript_Rival_Attack { // When first approaching the lab's door
+    setvar(VAR_BERSKET_STATE, 2)
+    end
+}
+
+script Keep_Off_Construction_Site {
+    lockall
+    applymovement(5, Common_Movement_WalkInPlaceFastestRight)
+    msgbox("Hey, you're not a worker!", MSGBOX_NPC)
+    applymovement(OBJ_EVENT_ID_PLAYER, StepAwayFromConstructionSite)
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    applymovement(5, Common_Movement_WalkInPlaceFastestDown)
+    waitmovement (5)
+    releaseall
+    end
+}
+
+script BersketCity_EventScript_See_Lips_Left { // After leaving lab with Cut, funneled down the street to trigger
+    lockall
+    call (BersketCity_EventScript_See_Lips)
+    applymovement(3, RunAwayFromLipsLeft)
+    waitmovement (3)
+    copyobjectxytoperm (3)
+    playmoncry (SPECIES_GULPIN, 0)
+    msgbox("Gulpin: Sigh", MSGBOX_NPC)
+    releaseall
+    end
+}
+
+script BersketCity_EventScript_See_Lips_Right { // After leaving lab with Cut, funneled down the street to trigger
+    lockall
+    call (BersketCity_EventScript_See_Lips)
+    applymovement(3, RunAwayFromLipsRight)
+    waitmovement (3)
+    copyobjectxytoperm (3)
+    playmoncry (SPECIES_GULPIN, 0)
+    msgbox("Gulpin: Sigh")
+    releaseall
+    end
+}
+
+script BersketCity_EventScript_See_Lips {
+    msgbox("Gulpin: Hey, do you know where-")
+    applymovement(3, Common_Movement_WalkInPlaceFastestLeft)
+    waitmovement (3)
+    applymovement(3, Common_Movement_ExclamationMark)
+    waitmovement (3)
+    msgbox("Woman: The Gulpin! They're back!")
+    setvar(VAR_BERSKET_STATE, 3)
+    setobjectxyperm (5, 18, 16)
+    setobjectxyperm (4, 18, 9) // the two construction crew npcs return to work
+    setobjectmovementtype (5, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype (4, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
+    setobjectxyperm (10, 42, 20) // Guljira goes back to wandering around his enclosure. Adjust coordinates when he receives his actual sprite
+    setobjectmovementtype (10, MOVEMENT_TYPE_WANDER_AROUND)
+    setobjectmovementtype (3, MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT)
+    return
+}
+
+script BersketCity_EventScript_Meet_Lips {
+    lockall
+    faceplayer
+    if (var(VAR_LIPS_STATE) == 0) {
+        msgbox(format("Hey, you have a Black Diamond?\nI can sense it.\pA Swalot gave you that? Huh.\pWell, I'm Lips. I'm looking for the Sacred Ingredients, but everyone here thinks I'm after their food! I just want the Ingredients.\pYou're looking for them too? Can I tag along? I'll gulp anyone who tries to mess with you!"), MSGBOX_NPC)
+        setvar(VAR_LIPS_STATE, 1)
+    }
+    if (var(VAR_LIPS_STATE) == 1) {
+        msgbox("Bring Lips on your journey?", MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            msgbox(format("I'll be around a little longer, but I'm heading east soon."), MSGBOX_NPC)
+            releaseall
+            end
+        }
+        else {
+            givemon (SPECIES_GULPIN, 9, ITEM_ORAN_BERRY)
+            if (var(VAR_RESULT) == 0) {
+                call (BersketCity_EventScript_Welcome_Lips)
+                msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    call (Common_EventScript_GetGiftMonPartySlot)
+                    call (Common_EventScript_NameReceivedPartyMon)
+                }
+                setflag (FLAG_HIDE_BERSKET_CITY_LIPS)
+                setvar(VAR_LIPS_STATE, 2)
+            }
+            elif (var(VAR_RESULT) == 1) {
+                call (BersketCity_EventScript_Welcome_Lips)
+                msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    call (Common_EventScript_NameReceivedBoxMon)
+                }
+                call (Common_EventScript_TransferredToPC)
+                setflag (FLAG_HIDE_BERSKET_CITY_LIPS)
+                setvar(VAR_LIPS_STATE, 3)
+            }
+            else {
+                goto (Common_EventScript_NoMoreRoomForPokemon)
+            }
+            releaseall
+            end
+        }
+
+    }
+
+}
+
+script BersketCity_EventScript_Welcome_Lips {
+    bufferspeciesname (1, SPECIES_GULPIN)
+    removeobject (2)
+    playfanfare (4)
+    setflag (FLAG_SYS_POKEMON_GET)
+    message ("{PLAYER} recruited Lips!")
+    waitmessage
+    waitfanfare
+    bufferspeciesname (0, SPECIES_GULPIN)
+    return
+}
+
+script BersketCity_EventScript_Tasters_Arrive {
+
+}
+
+script BersketCity_EventScript_Tasters_Depart {
+    
+}
+
+// Movements
+
+movement StepAwayFromConstructionSite {
+    walk_down
+}
+
+movement RunAwayFromLipsLeft {
+    walk_fast_right * 5
+    walk_fast_up * 7
+    walk_fast_left * 2
+}
+
+movement RunAwayFromLipsRight {
+    walk_fast_right *4
+    walk_fast_up * 7
+    walk_fast_left
+}

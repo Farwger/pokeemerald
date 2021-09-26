@@ -1,0 +1,41 @@
+script LittlerootTown_EventScript_Meet_Syurp {
+    lockall
+    checkplayergender
+    if (var(VAR_RESULT) == 0 {
+        applymovement(OBJ_EVENT_ID_PLAYER, FaceSyrupMale)
+    }
+    else {
+        applymovement(OBJ_EVENT_ID_PLAYER, FaceSyrupFemale)
+    }
+    addobject(9)
+    applymovement(9, SyurpWalkToPlayer)
+    waitmovement(9)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(9, Common_Movement_FacePlayer)
+    waitmovement(9)
+    msgbox(format("Hello, I'm Professor Syrup.\pYou're startled? I'm a Swalot. We protect this land from the Rot; that's why I visiting your Professor Birch.\pYou're interested? Well, head by the Bersket City Lab, and I may have something for you to do. Until then, be full with strength."), MSGBOX_NPC)
+    applymovement(9, SyrupLeavesLittleroot)
+    waitmovement(9)
+    removeobject(9)
+    setvar(VAR_LITTLEROOT_INTRO_STATE, 8)
+    releaseall
+    end
+}
+
+movement FaceSyrupMale {
+    face_right
+}
+
+movement FaceSyrupFemale {
+    face_left
+}
+
+movement SyurpWalkToPlayer {
+    walk_up * 4
+    walk_left
+    walk_up * 2
+}
+movement SyrupLeavesLittleroot {
+    walk_up * 6
+}

@@ -41,15 +41,15 @@
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
+#define FLAG_HIDE_BERSKET_CITY_LIPS    0x20 // After recruiting Lips, or after Lips leaves Bersket with Tasters
+#define FLAG_HIDE_BERSKET_CITY_TASTERS 0x21 // The Tasters fly in when the player unlocks the Food Controls the entrace/exit of the Tasters
+#define FLAG_HIDE_BERSKET_CITY_RIVAL   0x22 // Controls appearance of rival from the lab
+#define FLAG_HIDE_GROVE_ASSISTANTS     0x23 // After defeating Grata, the entralled assistants are relased and escape with the food
+#define FLAG_HIDE_WOODS_ASSISTANTS     0x24 // After their offer is refused, or after the ride, the assistants dissappear
+#define FLAG_HIDE_BERSKET_CITY_ASSISTANTS 0x25 // Finally the assistants are seen in Bersket (with Guljira or in lab?)
+#define FLAG_HIDE_BERSKET_CITY_TEALEAF    0x26 // After giving his diagnosis of Guljira, Tealeaf leaves the lab
+#define FLAG_HIDE_BERSKET_CITY_TASTER8    0x27 // Taster 8 enters and leaves the Storage. This flag controls his deperature from both the Bersket City and Food Storage maps
+#define FLAG_HIDE_LITTLEROOT_TOWN_SYURP   0x28 // Syurp leaves the lab, talks to player, and then departs to Route 101
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
@@ -337,7 +337,7 @@
 #define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
 #define FLAG_RECEIVED_AURORA_TICKET          0x13A
 #define FLAG_RECEIVED_MYSTIC_TICKET          0x13B
-#define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
+#define FLAG_RECEIVED_OLD_SEA_MAP            0x13C 
 #define FLAG_UNUSED_MYSTERY_GIFT_0x13D       0x13D
 #define FLAG_UNUSED_MYSTERY_GIFT_0x13E       0x13E
 #define FLAG_UNUSED_MYSTERY_GIFT_0x13F       0x13F
@@ -1135,18 +1135,18 @@
 #define FLAG_ITEM_VICTORY_ROAD_B2F_FULL_HEAL                        0x440
 #define FLAG_ITEM_MT_PYRE_6F_TM_30                                  0x441
 #define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_9_TM_26                      0x442
-#define FLAG_ITEM_FIERY_PATH_TM06                                   0x443
-#define FLAG_ITEM_ROUTE_124_RED_SHARD                               0x444
-#define FLAG_ITEM_ROUTE_124_BLUE_SHARD                              0x445
-#define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_TM_22                      0x446
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL               0x447
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_ESCAPE_ROPE              0x448
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_B1F_DIVE_BALL              0x449
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_TM_13                    0x44A
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_1F_REVIVE                  0x44B
-#define FLAG_ITEM_ABANDONED_SHIP_CAPTAINS_OFFICE_STORAGE_KEY        0x44C
-#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_3_WATER_STONE    0x44D
-#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_1_TM_18          0x44E
+#define FLAG_ITEM_FIERY_PATH_TM06                                   0x443 
+#define FLAG_ITEM_ROUTE_124_RED_SHARD                               0x444 
+#define FLAG_ITEM_ROUTE_124_BLUE_SHARD                              0x445 
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_TM_22                      0x446 
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL               0x447 
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_ESCAPE_ROPE              0x448 
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_B1F_DIVE_BALL              0x449 
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_TM_13                    0x44A 
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_1F_REVIVE                  0x44B 
+#define FLAG_ITEM_ABANDONED_SHIP_CAPTAINS_OFFICE_STORAGE_KEY        0x44C 
+#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_3_WATER_STONE    0x44D 
+#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_1_TM_18          0x44E 
 #define FLAG_ITEM_ROUTE_121_CARBOS                                  0x44F
 #define FLAG_ITEM_ROUTE_123_ULTRA_BALL                              0x450
 #define FLAG_ITEM_ROUTE_126_GREEN_SHARD                             0x451

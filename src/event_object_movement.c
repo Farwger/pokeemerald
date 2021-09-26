@@ -453,7 +453,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_KYOGRE_REFLECTION       0x1117
 #define OBJ_EVENT_PAL_TAG_GROUDON                 0x1118
 #define OBJ_EVENT_PAL_TAG_GROUDON_REFLECTION      0x1119
-#define OBJ_EVENT_PAL_TAG_UNUSED                  0x111A
+#define OBJ_EVENT_PAL_TAG_SNORLAX                 0x111A
 #define OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW        0x111B
 #define OBJ_EVENT_PAL_TAG_POOCHYENA               0x111C
 #define OBJ_EVENT_PAL_TAG_RED_LEAF                0x111D
@@ -463,6 +463,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
+#define OBJ_EVENT_PAL_TAG_SWALOT                  0x1124
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -509,6 +510,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
+    {gObjectEventPal_Swalot,                OBJ_EVENT_PAL_TAG_SWALOT},
+    {gObjectEventPal_Snorlax,               OBJ_EVENT_PAL_TAG_SNORLAX},
     {NULL,                                  0x0000},
 };
 
@@ -1891,7 +1894,7 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u8 graphicsId)
     {
         graphicsId = OBJ_EVENT_GFX_NINJA_BOY;
     }
-
+    
     return gObjectEventGraphicsInfoPointers[graphicsId];
 }
 
@@ -7497,7 +7500,7 @@ static void ObjectEventUpdateMetatileBehaviors(struct ObjectEvent *objEvent)
 
 static void GetGroundEffectFlags_Reflection(struct ObjectEvent *objEvent, u32 *flags)
 {
-    u32 reflectionFlags[NUM_REFLECTION_TYPES - 1] = {
+    u32 reflectionFlags[NUM_REFLECTION_TYPES - 1] = { 
         [REFL_TYPE_ICE   - 1] = GROUND_EFFECT_FLAG_ICE_REFLECTION,
         [REFL_TYPE_WATER - 1] = GROUND_EFFECT_FLAG_WATER_REFLECTION
     };
@@ -7715,7 +7718,7 @@ static u8 ObjectEventGetNearbyReflectionType(struct ObjectEvent *objEvent)
             RETURN_REFLECTION_TYPE_AT(objEvent->previousCoords.x - j, objEvent->previousCoords.y + one + i)
         }
     }
-
+    
     return REFL_TYPE_NONE;
 }
 

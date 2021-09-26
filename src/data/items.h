@@ -4537,4 +4537,16 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
+    [ITEM_SURF_ENGRAM] =
+    {
+        .name =_("SURF ENGRAM"),
+        .itemId = ITEM_SURF_ENGRAM,
+        .price = 0,
+        .description = sSurfEngramDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }
 };

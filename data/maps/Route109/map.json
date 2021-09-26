@@ -19,8 +19,8 @@
       "map": "MAP_SLATEPORT_CITY"
     },
     {
-      "direction": "left",
-      "offset": 40,
+      "direction": "down",
+      "offset": -60,
       "map": "MAP_ROUTE108"
     }
   ],
@@ -347,7 +347,9 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

@@ -227,7 +227,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 19,
+      "x": 18,
       "y": 100,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -617,10 +617,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 19,
-      "y": 101,
+      "x": 21,
+      "y": 103,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -663,6 +663,13 @@
       "y": 113,
       "elevation": 0,
       "dest_map": "MAP_TRAINER_HILL_ENTRANCE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 26,
+      "y": 62,
+      "elevation": 0,
+      "dest_map": "MAP_HOENN_DESERT",
       "dest_warp_id": 0
     }
   ],
