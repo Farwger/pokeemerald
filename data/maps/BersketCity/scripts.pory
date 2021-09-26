@@ -1,7 +1,6 @@
 mapscripts BersketCity_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         if (var(VAR_BERSKET_STATE) == 2) { // When leaving the lab with Cut
-            addobject (2) // Lips has arrived!
             setobjectxyperm (5, 24, 16)
             setobjectxyperm (4, 23, 17) // two construction crew npcs move to block the west street from lab
             setobjectmovementtype (5, MOVEMENT_TYPE_FACE_UP)
@@ -21,12 +20,6 @@ mapscripts BersketCity_MapScripts {
 // Signs
 script BerksetCity_Sign {
     msgbox("Bersket City\nHome of the best food in Hoenn.", MSGBOX_SIGN)
-    end
-}
-
-script Test {
-    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-    setvar(VAR_BERSKET_STATE, 1)
     end
 }
 
@@ -73,7 +66,7 @@ script Fearful_Woman {
 }
 
 script Construction_Crew1 {
-    msgbox(format("This building was destroyed by Guljira in his attack. We're rebuilding it."), MSGBOX_NPC)
+    msgbox(format("This building was destroyed by Guljira during the latest Gulpin raid. We're rebuilding it."), MSGBOX_NPC)
     end
 }
 
@@ -137,6 +130,9 @@ script BersketCity_EventScript_See_Lips_Right { // After leaving lab with Cut, f
 }
 
 script BersketCity_EventScript_See_Lips {
+    addobject (2) // Lips has arrived!
+    waitmovement (2)
+    delay(30)
     msgbox("Gulpin: Hey, do you know where-")
     applymovement(3, Common_Movement_WalkInPlaceFastestLeft)
     waitmovement (3)
